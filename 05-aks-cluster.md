@@ -8,7 +8,7 @@ Now that the [hub-spoke network is provisioned](./04-networking.md), the next st
 
    > :book: The app team working on behalf of business unit 0001 (BU001) is looking to create an AKS cluster of the app they are creating (Application ID: 0008). They have worked with the organization's networking team and have been provisioned a spoke network in which to lay their cluster and network-aware external resources into (such as Application Gateway). They took that information and added it to their [`cluster-stamp.json`](./cluster-stamp.json) and [`azuredeploy.parameters.prod.json`](./azuredeploy.parameters.prod.json) files.
    >
-   > They create this resource group to be the parent group for the application. Your team has pre--configured the resource group. Please assign the name to the variable aks.
+   > They create this resource group to be the parent group for the application. Your team has pre-configured the resource group. Please assign the name to the variable aks.
 
    ```bash
    # [This takes less than one minute.]
