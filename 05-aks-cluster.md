@@ -4,16 +4,16 @@ Now that the [hub-spoke network is provisioned](./04-networking.md), the next st
 
 ## Steps
 
-1. Create the AKS cluster resource group. Please replace "rg-bu0001a0008" with the resource group name you have pre-configured.
+1. Create the AKS cluster resource group. Please replace "rg-bu0001a0008-gap" with the resource group name you have pre-configured.
 
    > :book: The app team working on behalf of business unit 0001 (BU001) is looking to create an AKS cluster of the app they are creating (Application ID: 0008). They have worked with the organization's networking team and have been provisioned a spoke network in which to lay their cluster and network-aware external resources into (such as Application Gateway). They took that information and added it to their [`cluster-stamp.json`](./cluster-stamp.json) and [`azuredeploy.parameters.prod.json`](./azuredeploy.parameters.prod.json) files.
    >
-   > They create this resource group to be the parent group for the application.
+   > They create this resource group to be the parent group for the application. Your team has pre--configured the resource group. Please assign the name to the variable aks.
 
    ```bash
    # [This takes less than one minute.]
-   aks="rg-bu0001a0008"
-   az group create --name $aks --location eastus
+   aks="rg-bu0001a0008-gap"
+   # az group create --name $aks --location eastus
    ```
 
 1. Get the AKS cluster spoke VNet resource ID.
