@@ -14,8 +14,8 @@ The following two resource groups will be created and populated with networking 
 
 | Name                            | Purpose                                   |
 |---------------------------------|-------------------------------------------|
-| rg-enterprise-networking-hubs   | Contains all of your organization's regional hubs. A regional hubs include an egress firewall and Log Analytics for network logging. |
-| rg-enterprise-networking-spokes | Contains all of your organization's regional spokes and related networking resources. All spokes will peer with their regional hub and subnets will egress through the regional firewall in the hub. |
+| rg-enterprise-networking-hubs-gap   | Contains all of your organization's regional hubs. A regional hubs include an egress firewall and Log Analytics for network logging. |
+| rg-enterprise-networking-spokes-gap | Contains all of your organization's regional spokes and related networking resources. All spokes will peer with their regional hub and subnets will egress through the regional firewall in the hub. |
 
 ### Resources
 
@@ -27,14 +27,14 @@ The following two resource groups will be created and populated with networking 
 
 ## Steps
 
-1. Login into the Azure subscription that you'll be deploying into. Please replace "rg-enterprise-networking-hubs" and "rg-enterprise-networking-spokes" with your resource group's names.
+1. Login into the Azure subscription that you'll be deploying into. Please replace "rg-enterprise-networking-hubs-gap" and "rg-enterprise-networking-spokes-gap" with your resource group's names.
 
    > :book: The networking team logins into the Azure subscription that will contain the regional hub. At Contoso Bicycle, all of their regional hubs are in the same, centrally-managed subscription.
 
    ```bash
    az login -t $TENANTID_AZURERBAC
-   hubs="rg-enterprise-networking-hubs"
-   spokes="rg-enterprise-networking-spokes"
+   hubs="rg-enterprise-networking-hubs-gap"
+   spokes="rg-enterprise-networking-spokes-gap"
    ```
 
 1. Create the regional network hub.
