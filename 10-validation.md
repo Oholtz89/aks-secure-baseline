@@ -70,7 +70,7 @@ Azure Monitor is configured to [scrape Prometheus metrics](https://docs.microsof
 
 1. In the Azure Portal, navigate to your AKS cluster resource group (`rg-bu0001a0008`).
 1. Select your Log Analytic Workspace resource.
-1. Click _Saved Searches_.
+1. Click _Search_.
 
    :bulb: This reference implementation ships with some saved queries as an example of how you can write your own and manage them via ARM templates.
 
@@ -89,7 +89,7 @@ The example workload uses the standard dotnet logger interface, which are captur
 
    ```
    let podInventory = KubePodInventory
-   | where ContainerName endswith "aspnetcore-webapp-sample"
+   | where ContainerName endswith "aspnet-webapp-sample"
    | distinct ContainerID, ContainerName
    | project-rename Name=ContainerName;
    ContainerLog
